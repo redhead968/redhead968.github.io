@@ -2,27 +2,95 @@
 <html>
 
 <head>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
     <title>אתר שעות התנדבות</title>
+    <style>
+        * {
+            --text_back: #0b0b0f;
+            --background: #011D28;
+            --login_h: #011628;
+            --login: #022132;
+            --tabs: #012F3D;
+            --dim-bg: #053352;
+            --menu: #014751;
+            --tabs_button: #006469;
+            --tabs_button_a: #008080;
+            --tabs_button_h: #12A592;
+            --my-message-color: #41c3b2;
+            --bright-bg: #11e9cc;
 
+            --text_passive-gray: #a4ada0;
+            --scrollbar: #F1FFEB88;
+            --message-color: #f1f1f1;
+            --text_passive: #F1FFEB;
+
+            --good-bright: #16ff5c;
+            --good: #0de94f;
+            --good-medium: #0ebe43;
+            --good-dark: #054719;
+            --bad-bright: #f00a1d;
+            --bad: #e2081a;
+            --bad-medium: #9c0814;
+            --bad-dark: #68060e;
+            --neutral: #0028da;
+        }
+    </style>
 </head>
 
-<body>
-    <center>
-        <h1 style="color:rgb(0, 119, 255) "> אתר שעות התנדבות</h1>
-        <p>This is a paragraph.
-    
-        
-    </center>
+<body style="background-color:rgb(240, 240, 240);" dir="rtl">
+    <div style="width: fit-content; margin-left: auto; margin-right: auto; border: none;">
+
+        <h1 style="color:var(--text_back)"> אתר שעות התנדבות</h1>
 
 
 
-        
-    </p>
+
+        <div>
+            <center>
+            <label for="username"> שם:</label>
+                <br>
+            <input type="text" id="username" name="username">
+
+
+            <br>
+            <label for="pass">סיסמה:</label>
+            <br>
+            <input type="password" id="pass" name="password" minlength="8" required>
+
+
+            <br>
+            <br>
+            <input type="submit" value="חפש">
+            </center>
+
+            <br>
+        </div>
+
+        <br>
+        <div>
+            <center>
+                <h3 style="color:aqua;">התחברות מורים</h3>
+                <input type="submit" value="התחברות מורים">
+            </center>
+
+        </div>
+    </div>
+
+
+
+
 
 </body>
 
 </html>
 
 
-<!-- להכין מקום לסיסמה ולכפתור -->
-<!-- לשנות צבע לרקע -->
+<!-- לעשות שהקלטים יהיו ברוחב שנראה יפה -->
+<!-- לשפר עיצוב -->
+<!-- להוסיף צבעים -->
+<!-- לשנות פונט (גופן) -->
