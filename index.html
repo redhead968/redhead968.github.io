@@ -7,9 +7,7 @@
             border: 1px solid black;
             padding: 10px;
         }
-    </style>
-    <title>אתר שעות התנדבות</title>
-    <style>
+
         * {
             --text_back: #0b0b0f;
             --background: #011D28;
@@ -39,7 +37,21 @@
             --bad-dark: #68060e;
             --neutral: #0028da;
         }
+
+        button {
+            background: transparent;
+            color: black;
+            border: none;
+            font-size: 50px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #053352;
+        }
     </style>
+    <title>אתר שעות התנדבות</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body style="background-color:rgb(240, 240, 240);" dir="rtl">
@@ -52,27 +64,33 @@
 
         <div>
             <center>
-            <label for="username"> שם:</label>
+                <label for="username"> שם:</label>
                 <br>
-            <input type="text" id="username" name="username">
+                <input type="text" id="username" name="username">
 
 
-            <br>
-            <label for="pass">סיסמה:</label>
-            <br>
-            <input type="password" id="pass" name="password" minlength="8" required>
+                <br>
+                <label for="pass">סיסמה:</label>
+                <br>
+                <input type="password" id="pass" name="password" minlength="8" required>
 
-
-            <br>
-            <br>
-            <input type="submit" value="חפש">
-            <br>
-
-            <a href="https://forms.gle/HDXkkwPRhwDu5kJg7"> קישור  </a>
+                <!-- <a href="https://forms.gle/HDXkkwPRhwDu5kJg7"> קישור  </a> -->
             </center>
 
             <br>
+
+            <center style="display: flex; flex-direction: row; justify-content: space-around;">
+                <button onclick="window.location.href = 'https://forms.gle/HDXkkwPRhwDu5kJg7';"
+                    title="הוספת שעות התנדבות">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </button>
+                <button onclick="window.location.href = 'search.html';" title="לחפש">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </center>
+
         </div>
+        <br>
 
         <br>
         <!-- <div>
