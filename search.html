@@ -60,12 +60,16 @@
             <br>
         </div>
     </center>
-    <script src="data.js" ></script>
+    <script src="data.js"></script>
     <script>
-        var string = location.hash;
-        string = string.replace("#" , "");
-        console.log(string);
-        console.log(data)
+        var name = location.hash;
+        name = decodeURIComponent(name);
+        
+        name = name.replace("#" , "");
+        var lines = data.split("\n");
+        console.log(name);
+        console.log(lines);
+        
     </script>
 </body>
 
