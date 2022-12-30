@@ -111,9 +111,14 @@
     <script>
 
         function scrch() {
-            window.alert("hello world and world");
-            window.location.href = 'search.html#shimon';   
-
+            var username = document.getElementById('username').value;
+            if (username == "") {
+                window.alert("אין שם / סיסמה")  
+                return;
+            }
+            
+            window.location.href = 'search.html#' + encodeURIComponent(username);
+            
         }
     </script>
 </body>
