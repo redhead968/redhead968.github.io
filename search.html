@@ -55,10 +55,22 @@
         name = decodeURIComponent(name);
 
         name = name.replace("#", "");
-        var lines = data.split("\n");
+        var lines = data.split("\n").filter(line => line.length > 0);
         console.log(name);
-        console.log(lines);
 
+        for (var i = 0 ; i < lines.length; i++ ){
+            lines[i] = lines[i].split(",");
+        }
+
+        console.log({
+            "timestamp": "2022-12-04",
+            "name": "shimon",
+            "hour": "15:46"
+        })
+
+        // replace all items in list with objects (JSON)!
+
+        console.log(lines);
     </script>
 </body>
 
