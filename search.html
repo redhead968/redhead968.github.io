@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <link rel="icon" type="image/jpeg" href="https://www.kyair.org.il/moaza/Departments/hinuch/PublishingImages/%D7%A1%D7%9E%D7%9C%20%D7%90%D7%99%D7%9C%D7%9F%20%D7%A8%D7%9E%D7%95%D7%9F.jpg">
+    <link rel="icon" type="image/jpeg"
+        href="https://www.kyair.org.il/moaza/Departments/hinuch/PublishingImages/%D7%A1%D7%9E%D7%9C%20%D7%90%D7%99%D7%9C%D7%9F%20%D7%A8%D7%9E%D7%95%D7%9F.jpg">
     <style>
         div {
             border: 1px solid black;
@@ -46,30 +47,18 @@
 
 <body style="background-color:rgb(240, 240, 240);" dir="rtl">
     <center>
-        <h1>התחברות מורים </h1>
-        <br>
-        <label for="pass">סיסמה:</label>
-        <br>
-        <input type="password" id="pass" name="password" minlength="8" required>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div>
-            תלחצו על הקישור הזה
-            <br>
-        </div>
+        <h1>שעות התנדבות</h1>
     </center>
     <script src="data.js"></script>
     <script>
         var name = location.hash;
         name = decodeURIComponent(name);
-        
-        name = name.replace("#" , "");
+
+        name = name.replace("#", "");
         var lines = data.split("\n");
         console.log(name);
         console.log(lines);
-        
+
     </script>
 </body>
 
