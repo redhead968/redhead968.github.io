@@ -58,16 +58,25 @@
         var lines = data.split("\n").filter(line => line.length > 0);
         console.log(name);
 
-        for (var i = 0 ; i < lines.length; i++ ){
+        for (var i = 0; i < lines.length; i++) {
             lines[i] = lines[i].split(",");
         }
-        
+
         console.log({
             "timestamp": "2022-12-04",
             "name": "shimon",
             "hour": "15:46"
         })
+        function convertToObj(a, b) {
+            if (a.length != b.length || a.length == 0 || b.length == 0) {
+                return null;
+            }
+            let obj = {};
 
+            // Using the foreach method
+            a.forEach((k, i) => { obj[k] = b[i] })
+            return obj;
+        }
         // replace all items in list with objects (JSON)!
 
         console.log(lines);
