@@ -67,6 +67,8 @@
             "name": "shimon",
             "hour": "15:46"
         })
+
+
         function convertToObj(a, b) {
             if (a.length != b.length || a.length == 0 || b.length == 0) {
                 return null;
@@ -77,9 +79,17 @@
             a.forEach((k, i) => { obj[k] = b[i] })
             return obj;
         }
-        // replace all items in list with objects (JSON)!
+
+
+        var objects = [];
+
+        for (var i = 1; i < lines.length; i++) {
+            objects.push(convertToObj(lines[0], lines[i]))
+
+        }
 
         console.log(lines);
+        console.log(objects);
     </script>
 </body>
 
