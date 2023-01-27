@@ -82,8 +82,7 @@
             <br>
 
             <center style="display: flex; flex-direction: row; justify-content: space-around;">
-                <button onclick="window.location.href = 'plus.html';"
-                    title="הוספת שעות התנדבות">
+                <button onclick="window.location.href = 'plus.html';" title="הוספת שעות התנדבות">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 </button>
                 <button onclick="scrch();" title="לחפש">
@@ -110,15 +109,31 @@
 
 
     <script>
+
         function scrch() {
             var username = document.getElementById('username').value;
-            if (username == "") {
-                window.alert("אין שם / סיסמה")  
-                return;
+            var password = document.getElementById('pass').value;
+            // if (username == "") {
+            //     window.alert("אין שם ")  
+            //     return;
+            // }
+            var greeting = "";
+            if (username == "" && password == "") {
+                greeting = "אין שם וסיסמה"
+            } else if (username == "") {
+                greeting = "אין שם";
+            } else if (password == "") {
+                greeting = "אין סיסמה";
+            } else {
+                window.location.href = 'search.html#' + encodeURIComponent(username);
             }
-            
-            window.location.href = 'search.html#' + encodeURIComponent(username);
-            
+
+
+            window.alert(greeting)
+
+
+
+
         }
     </script>
 </body>
