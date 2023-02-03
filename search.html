@@ -51,22 +51,22 @@
     </center>
     <script src="data.js"></script>
     <script>
-        var name = location.hash;
-        name = decodeURIComponent(name);
+        var hash = location.hash;
+        hash = decodeURIComponent(hash);
 
-        name = name.replace("#", "");
+        hash = hash.replace("#", "");
         var lines = data.split("\n").filter(line => line.length > 0);
-        console.log(name);
+        console.log("hash = " +  hash);
 
         for (var i = 0; i < lines.length; i++) {
             lines[i] = lines[i].split(",");
         }
 
-        console.log({
-            "timestamp": "2022-12-04",
-            "name": "shimon",
-            "hour": "15:46"
-        })
+        // console.log({
+        //     "timestamp": "2022-12-04",
+        //     "name": "shimon",
+        //     "hour": "15:46"
+        // })
 
 
         function convertToObj(a, b) {
@@ -82,25 +82,34 @@
 
 
         var objects = [];
+        var whitelist = [];
 
         for (var i = 1; i < lines.length; i++) {
             objects.push(convertToObj(lines[0], lines[i]))
 
 
         }
-
-        console.log(lines);
-        console.log(objects);
+        var space = " ";
+        // console.log(lines);
+        // console.log(objects);
 
         for (var i = 0; i < objects.length; i++) {
             // -=+=- if object = # according to checkNames -=+=- \\
             var object = objects[i];
             var family = object["שם משפחה של התלמיד/ה"];
-            var space = " "
-            var name   =  object["שם פרטי של התלמיד/ה"];
-            window.console.log(name + space + family);
+            var name = object["שם פרטי של התלמיד/ה"];
+            // window.console.log(name + space + family);
+            if (checkNames(hash,name,family)) {
+                whitelist.push(object)
+            }
         }
+        console.log(whitelist)
         function checkNames(full, name, family) {
+            if (name + space + family == full) {
+                return true;
+            } else {
+                return false;
+            }
             // -=+=- check if full = name + famliy -=+=- 
         }
     </script>
