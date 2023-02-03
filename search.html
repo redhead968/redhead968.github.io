@@ -86,15 +86,21 @@
         for (var i = 1; i < lines.length; i++) {
             objects.push(convertToObj(lines[0], lines[i]))
 
-        }   
-        
+
+        }
+
         console.log(lines);
         console.log(objects);
 
         for (var i = 0; i < objects.length; i++) {
             // -=+=- if object = # according to checkNames -=+=- \\
+            var object = objects[i];
+            var family = object["שם משפחה של התלמיד/ה"];
+            var space = " "
+            var name   =  object["שם פרטי של התלמיד/ה"];
+            window.console.log(name + space + family);
         }
-        function checkNames(full , name, family ){
+        function checkNames(full, name, family) {
             // -=+=- check if full = name + famliy -=+=- 
         }
     </script>
