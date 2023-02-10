@@ -23,7 +23,8 @@
         var hash = location.hash;
         hash = decodeURIComponent(hash);
 
-        hash = hash.replace("#", "");
+        hash = hash.replace("#", "").trim();
+        hash = hash.split(" ").filter(x => x!=("")).join(" ")
         var lines = data.split("\n").filter(line => line.length > 0);
         console.log("hash = " +  hash);
 
