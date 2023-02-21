@@ -107,19 +107,17 @@
         console.log(whitelist)
         var table = document.getElementById("times")
         for (var i = 0; i < whitelist.length; i++) {
-
-            // Create a new table row element
             var newRow = document.createElement("tr");
 
             // Create three new cell elements and add text to each cell
             var cell1 = document.createElement("td");
-            cell1.textContent = "Cell 1";
+            cell1.textContent = whitelist[i]["מקום התנדבות"];
             var cell2 = document.createElement("td");
-            cell2.textContent = "Cell 2";
+            cell2.textContent = whitelist[i]["תאריך"];
             var cell3 = document.createElement("td");
-            cell3.textContent = "Cell 3";
+            cell3.textContent = whitelist[i]["שעת התחלה  "];
             var cell4 = document.createElement("td");
-            cell4.textContent = "Cell 4";
+            cell4.textContent = whitelist[i]["שעת סיום "];
             var cell5 = document.createElement("td");
             cell5.textContent = "Cell 5";
 
