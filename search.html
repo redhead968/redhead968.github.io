@@ -93,12 +93,6 @@
             lines[i] = lines[i].split(",");
         }
 
-        // console.log({
-        //     "timestamp": "2022-12-04",
-        //     "name": "shimon",
-        //     "hour": "15:46"
-        // })
-
 
         function convertToObj(a, b) {
             if (a.length != b.length || a.length == 0 || b.length == 0) {
@@ -121,15 +115,12 @@
 
         }
         var space = " ";
-        // console.log(lines);
-        // console.log(objects);
 
         for (var i = 0; i < objects.length; i++) {
             // -=+=- if object = # according to checkNames -=+=- \\
             var object = objects[i];
             var family = object["שם משפחה של התלמיד/ה"];
             var name = object["שם פרטי של התלמיד/ה"];
-            // window.console.log(name + space + family);
             if (checkNames(hash, name, family)) {
                 whitelist.push(object)
             }
