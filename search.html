@@ -77,12 +77,19 @@
         hash = decodeURIComponent(hash);
 
         hash = hash.replace("#", "").trim();
+
         hash = hash.split(" ").filter(x => x != ("")).join(" ")
+
         var lines = data.split("\n").filter(line => line.length > 0);
+
         console.log("hash = " + hash);
+
         const title = document.getElementById("volunteering times")
+
         title.innerHTML += "/" + hash
+
         for (var i = 0; i < lines.length; i++) {
+
             lines[i] = lines[i].split(",");
         }
 
