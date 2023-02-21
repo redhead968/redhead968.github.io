@@ -135,6 +135,40 @@
             }
         }
         console.log(whitelist)
+        var table = document.getElementById("times")
+        for (var i = 0; i < whitelist.length; i++) {
+
+            // Create a new table row element
+            var newRow = document.createElement("tr");
+
+            // Create three new cell elements and add text to each cell
+            var cell1 = document.createElement("td");
+            cell1.textContent = "Cell 1";
+            var cell2 = document.createElement("td");
+            cell2.textContent = "Cell 2";
+            var cell3 = document.createElement("td");
+            cell3.textContent = "Cell 3";
+            var cell4 = document.createElement("td");
+            cell4.textContent = "Cell 4";
+            var cell5 = document.createElement("td");
+            cell5.textContent = "Cell 5";
+
+            // Append the three cells to the new row element
+            newRow.appendChild(cell1);
+            newRow.appendChild(cell2);
+            newRow.appendChild(cell3);
+            newRow.appendChild(cell4);
+            newRow.appendChild(cell5);
+
+
+            // Append the new row to the table
+            table.appendChild(newRow);
+
+
+
+        }
+
+
         function checkNames(full, name, family) {
             if (name + space + family == full) {
                 return true;
