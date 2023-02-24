@@ -120,7 +120,25 @@
             var cell4 = document.createElement("td");
             cell4.textContent = whitelist[i]["שעת סיום "];
             var cell5 = document.createElement("td");
-            cell5.textContent = "Cell 5";
+            // Define two time strings
+            var time1 = whitelist[i]["שעת סיום "];
+            var time2 = whitelist[i]["שעת התחלה  "];
+
+            // Convert time strings to Date objects
+            var date1 = new Date("1970-01-01T" + time1 + "Z");
+            var date2 = new Date("1970-01-01T" + time2 + "Z");
+
+            // Calculate the difference in milliseconds
+            var diff = date1.getTime() - date2.getTime();
+
+            // Convert the difference to a Date object
+            var resultDate = new Date(diff);
+
+            // Convert the result to a string in "hh:mm:ss" format
+            var result = resultDate.toISOString().substr(11, 8);
+
+            console.log(result);
+            cell5.textContent = result
 
             // Append the three cells to the new row element
             newRow.appendChild(cell1);
