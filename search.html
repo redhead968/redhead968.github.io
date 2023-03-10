@@ -110,13 +110,6 @@
         var total = 0;
         for (var i = 0; i < whitelist.length; i++) {
 
-            // Create three new cell elements and add text to each cell
-            var cell1 = document.createElement("td");
-            cell1.textContent = whitelist[i]["מקום התנדבות "];
-            var cell2 = document.createElement("td");
-            cell2.textContent = whitelist[i]["תאריך"];
-            var cell3 = document.createElement("td");
-            var cell4 = document.createElement("td");
             // Define two time strings
             var time1 = whitelist[i]["שעת סיום "];
             var time2 = whitelist[i]["שעת התחלה  "];
@@ -154,6 +147,31 @@
                 return false;
             }
             // -=+=- check if full = name + famliy -=+=- 
+        }
+        function addRow(table, a, b, c, d, e , td = "td") {
+
+            var newRow = document.createElement("tr");
+
+            // Create three new cell elements and add text to each cell
+            var cell1 = document.createElement(td);
+            cell1.textContent = a
+            var cell2 = document.createElement(td);
+            cell2.textContent = b
+            var cell3 = document.createElement(td);
+            cell3.textContent = c;
+            var cell4 = document.createElement(td);
+            cell4.textContent = d;
+            var cell5 = document.createElement(td);
+            cell5.textContent = e;
+            newRow.appendChild(cell1);
+            newRow.appendChild(cell2);
+            newRow.appendChild(cell3);
+            newRow.appendChild(cell4);
+            newRow.appendChild(cell5);
+
+            // Append the new row to the table
+            table.appendChild(newRow);
+
         }
     </script>
 </body>
