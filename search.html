@@ -109,7 +109,6 @@
         var table = document.getElementById("times")
         var total = 0;
         for (var i = 0; i < whitelist.length; i++) {
-            var newRow = document.createElement("tr");
 
             // Create three new cell elements and add text to each cell
             var cell1 = document.createElement("td");
@@ -117,10 +116,7 @@
             var cell2 = document.createElement("td");
             cell2.textContent = whitelist[i]["תאריך"];
             var cell3 = document.createElement("td");
-            cell3.textContent = whitelist[i]["שעת התחלה  "];
             var cell4 = document.createElement("td");
-            cell4.textContent = whitelist[i]["שעת סיום "];
-            var cell5 = document.createElement("td");
             // Define two time strings
             var time1 = whitelist[i]["שעת סיום "];
             var time2 = whitelist[i]["שעת התחלה  "];
@@ -141,8 +137,6 @@
             // Convert the result to a string in "hh:mm:ss" format
             var result = resultDate.toISOString().substr(11, 8);
 
-            console.log(result);
-            cell5.textContent = result
 
             // Append the three cells to the new row element
             newRow.appendChild(cell1);
