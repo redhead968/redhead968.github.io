@@ -137,32 +137,14 @@
             // Convert the result to a string in "hh:mm:ss" format
             var result = resultDate.toISOString().substr(11, 8);
 
-
-            // Append the three cells to the new row element
-            newRow.appendChild(cell1);
-            newRow.appendChild(cell2);
-            newRow.appendChild(cell3);
-            newRow.appendChild(cell4);
-            newRow.appendChild(cell5);
-
-
-            // Append the new row to the table
-            table.appendChild(newRow);
-
-
+            addRow(table, whitelist[i]["מקום התנדבות "], whitelist[i]["תאריך"], whitelist[i]["שעת התחלה  "], whitelist[i]["שעת סיום "], result)
 
         }
-        var milliseconds = total * 3600000;
 
-        // Convert the number of milliseconds to a Date object
-        var date = new Date(milliseconds);
-
-        // Format the Date object into a string in "hh:mm:ss" format
-        var hours = ("0" + date.getHours()).slice(-2);
-        var minutes = ("0" + date.getMinutes()).slice(-2);
-        var seconds = ("0" + date.getSeconds()).slice(-2);
-        var timeString = hours + ":" + minutes + ":" + seconds;
-        window.alert(timeString)
+        let totalSeconds = Math.floor(total * 60 * 60);
+        let timeString = new Date(totalSeconds * 1000).toISOString().substr(11, 8);
+        addRow(table,  "", "", "", "סך הכל", timeString , "th")
+        console.log(timeString); // Output: 05:15:00
 
 
         function checkNames(full, name, family) {
