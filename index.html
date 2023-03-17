@@ -136,8 +136,13 @@
             } else if (password == "") {
                 greeting = "אין סיסמה";
             } else {
-                window.location.href = 'search.html#' + encodeURIComponent(username);
-                return;
+                if (password == "123") {
+                    window.location.href = 'search.html#' + encodeURIComponent(username);
+                    return;
+                    
+                } else {
+                    greeting = " סיסמה שגויה";
+                }
             }
 
 
