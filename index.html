@@ -109,6 +109,18 @@
 
 
     <script>
+        const input = document.getElementById("username");
+        input.addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                search();
+            }
+        });
+        const passwordInput = document.getElementById("pass");
+        passwordInput.addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                search();
+            }
+        });
         function search() {
             var username = document.getElementById('username').value;
             var password = document.getElementById('pass').value;
