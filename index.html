@@ -145,12 +145,13 @@
             } else if (password == "") {
                 greeting = "אין סיסמה";
             } else {
-                if (hash(password) == passwords[username]) {
+                if (hash(password) === passwords[username]) {
                     window.location.href = 'search.html#' + encodeURIComponent(username);
                     return;
 
                 } else {
                     greeting = "סיסמה שגויה";
+                    greeting += "\n" + hash(password); 
                 }
             }
 
