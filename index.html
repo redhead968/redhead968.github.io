@@ -145,7 +145,7 @@
             } else if (password == "") {
                 greeting = "אין סיסמה";
             } else {
-                if (password == passwords[username]) {
+                if (hash(password) == passwords[username]) {
                     window.location.href = 'search.html#' + encodeURIComponent(username);
                     return;
 
