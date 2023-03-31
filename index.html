@@ -5,10 +5,41 @@
     <link rel="icon" type="image/jpeg"
         href="https://www.kyair.org.il/moaza/Departments/hinuch/PublishingImages/%D7%A1%D7%9E%D7%9C%20%D7%90%D7%99%D7%9C%D7%9F%20%D7%A8%D7%9E%D7%95%D7%9F.jpg">
     <style>
-        div {
+        .password-toggle {
+            position: relative;
+        }
+
         body {
             font-family: Arial, sans-serif;
         }
+
+        .toggle-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .toggle-icon i {
+            font-size: 20px;
+        }
+
+        .fa-eye-slash:before,
+        .fa-eye:before {
+            margin-right: -14px;
+        }
+
+        /* Show the password when the toggle button is clicked */
+        .show-password~input[type="password"] {
+            /* Change the input type to "text" */
+            -webkit-text-security: none;
+            -moz-text-security: none;
+            -ms-text-security: none;
+            /* text-security: none; */
+        }
+
+        div.sho {
             border: 1px solid black;
             padding: 10px;
         }
@@ -67,7 +98,7 @@
 
 
 
-        <div>
+        <div class="sho">
             <center>
                 <label for="username"> שם:</label>
                 <br>
@@ -77,7 +108,11 @@
                 <br>
                 <label for="pass">סיסמה:</label>
                 <br>
-                <input type="password" id="pass" name="password" minlength="8" required>
+                <div class="password-toggle">
+                    <input type="password" id="pass" name="password" minlength="8" required>
+                    <span class="toggle-icon"><i class="fa fa-eye"></i></span>
+                </div>
+
 
                 <!-- <a href="https://forms.gle/HDXkkwPRhwDu5kJg7"> קישור  </a> -->
             </center>
@@ -112,6 +147,22 @@
 
     <script src="password.js"></script>
     <script>
+        // Toggle the password visibility when the toggle button is clicked
+        document.querySelector('.toggle-icon').addEventListener('click', function () {
+            let passwordInput = document.querySelector('#pass');
+            let toggleIcon = document.querySelector('.toggle-icon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.innerHTML = '<i class="fa fa-eye-slash"></i>';
+                passwordInput.classList.add('show-password');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.innerHTML = '<i class="fa fa-eye"></i>';
+                passwordInput.classList.remove('show-password');
+            }
+
+        });
+
         function hash(str) {
             let hash = 0;
             for (let i = 0; i < str.length; i++) {
