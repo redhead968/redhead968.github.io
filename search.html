@@ -48,7 +48,7 @@
                 <th>סך הכול שעות במפגש הזה</th>
             </tr>
         </table>
-        
+
 
     </center>
     <script src="data.js"></script>
@@ -136,7 +136,7 @@
 
         let totalSeconds = Math.floor(total * 60 * 60);
         let timeString = new Date(totalSeconds * 1000).toISOString().substr(11, 8);
-        addRow(table,  "", "", "", "סך הכל", timeString , "th")
+        addRow(table, "", "", "", "סך הכל", timeString, "th")
         console.log(timeString); // Output: 05:15:00
 
 
@@ -148,7 +148,7 @@
             }
             // -=+=- check if full = name + famliy -=+=- 
         }
-        function addRow(table, a, b, c, d, e , td = "td") {
+        function addRow(table, a, b, c, d, e, td = "td") {
 
             var newRow = document.createElement("tr");
 
