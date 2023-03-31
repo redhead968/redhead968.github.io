@@ -147,6 +147,7 @@
 
     <script src="password.js"></script>
     <script>
+        var counter = 0;
         // Toggle the password visibility when the toggle button is clicked
         document.querySelector('.toggle-icon').addEventListener('click', function () {
             let passwordInput = document.querySelector('#pass');
@@ -159,6 +160,12 @@
                 passwordInput.type = 'password';
                 toggleIcon.innerHTML = '<i class="fa fa-eye"></i>';
                 passwordInput.classList.remove('show-password');
+            }
+            counter++;
+            if (counter > 30 ) {
+                // rickroll code
+                window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+                // dont press the eye 30 times
             }
 
         });
